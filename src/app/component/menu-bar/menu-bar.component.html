@@ -1,0 +1,29 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <img class="icon" src="assets/path-finder.png" alt="path-finder.png">
+    <span>Path finder</span>
+    <button mat-button [matMenuTriggerFor]="algorithmMenu">Algorithm</button>
+    <button mat-button [matMenuTriggerFor]="sizeMenu">Size</button>
+    <button mat-button [matMenuTriggerFor]="drawingState">Draw</button>
+    <div fxFlex="1 1 auto"></div>
+    <button mat-button (click)="start()">Start <mat-icon aria-hidden="false">play_circle_outline</mat-icon></button>
+    <button mat-button (click)="reset()">Refresh <mat-icon aria-hidden="false">refresh</mat-icon></button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-menu #algorithmMenu="matMenu">
+  <button *ngFor="let algorithm of algorithms" mat-menu-item routerLink="/{{ algorithm }}">{{ algorithm }}</button>
+</mat-menu>
+
+<mat-menu #sizeMenu="matMenu">
+  <button mat-menu-item (click)="changeHeight(25)">Small (height = 25)</button>
+  <button mat-menu-item (click)="changeHeight(50)">Normal (height = 50)</button>
+  <button mat-menu-item (click)="changeHeight(75)">Big (height = 75)</button>
+</mat-menu>
+
+<mat-menu #drawingState="matMenu">
+  <button mat-menu-item (click)="changeDrawingState('W')">Wall (W)</button>
+  <button mat-menu-item (click)="changeDrawingState('M')">Mountain (M)</button>
+  <button mat-menu-item (click)="changeDrawingState('S')">Start (S)</button>
+  <button mat-menu-item (click)="changeDrawingState('E')">End (E)</button>
+</mat-menu>

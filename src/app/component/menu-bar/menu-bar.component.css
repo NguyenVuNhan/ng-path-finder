@@ -1,0 +1,12 @@
+.fixed {
+  width: 100% !important;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+}
+
+.function-icon {
+  padding: 0 14px;
+}
