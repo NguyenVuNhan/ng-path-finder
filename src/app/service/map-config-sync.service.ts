@@ -1,7 +1,7 @@
-import {Injectable} from "@angular/core";
-import {BehaviorSubject} from "rxjs";
-import {PointType} from "../interfaces/grid-map";
-import {IMapData} from "../interfaces/map-config";
+import { Injectable } from "@angular/core";
+import { BehaviorSubject } from "rxjs";
+import { PointType } from "../interfaces/grid-map";
+import { IMapData } from "../interfaces/map-config";
 
 @Injectable({
   providedIn: "root"
@@ -18,12 +18,17 @@ export class MapConfigSyncService {
   };
 
   onStop: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-  heightChange: BehaviorSubject<number> = new BehaviorSubject<number>(this.height);
+  heightChange: BehaviorSubject<number> = new BehaviorSubject<number>(
+    this.height
+  );
   onReset: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   onStart: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-  drawingStateChange: BehaviorSubject<PointType> =
-    new BehaviorSubject<PointType>(this.drawingState as "S" | "E" | "B" | "W" | "P");
-  mapDataSync: BehaviorSubject<IMapData> = new BehaviorSubject<IMapData>(this.mapData);
+  drawingStateChange: BehaviorSubject<PointType> = new BehaviorSubject<
+    PointType
+  >(this.drawingState as "S" | "E" | "B" | "W" | "P");
+  mapDataSync: BehaviorSubject<IMapData> = new BehaviorSubject<IMapData>(
+    this.mapData
+  );
 
   constructor() {
     this.heightChange.subscribe(newHeight => {

@@ -2,6 +2,12 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.23.
 
+
+# Live demo
+
+* https://nguyenvunhan.github.io/ng-path-finder
+
+
 ## Installation
 
 Run 'npm install' to download all the packages

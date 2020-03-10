@@ -1,7 +1,7 @@
-import {Component, HostListener, OnInit} from "@angular/core";
-import {MapConfigSyncService} from "../../service/map-config-sync.service";
-import {PointType} from "../../interfaces/grid-map";
-import {algorithms} from "../../interfaces/map-config";
+import { Component, HostListener, OnInit } from "@angular/core";
+import { MapConfigSyncService } from "../../service/map-config-sync.service";
+import { PointType } from "../../interfaces/grid-map";
+import { algorithms } from "../../interfaces/map-config";
 
 @Component({
   selector: "app-menu-bar",
@@ -9,12 +9,11 @@ import {algorithms} from "../../interfaces/map-config";
   styleUrls: ["./menu-bar.component.css"]
 })
 export class MenuBarComponent implements OnInit {
-  private algorithms = Object.keys(algorithms);
+  algorithms = Object.keys(algorithms);
 
-  constructor(private mapConfigSyncService: MapConfigSyncService) { }
+  constructor(private mapConfigSyncService: MapConfigSyncService) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   reset() {
     this.mapConfigSyncService.onReset.next(true);
